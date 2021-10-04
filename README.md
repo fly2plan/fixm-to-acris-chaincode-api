@@ -1,11 +1,15 @@
 # api-middleware for fixmtoacristransformer chaincode.
 
-The middleware to support chaincode operations on the fixtoacris transformer. 
+The middleware to support chaincode operations on the fixmtoacristransformer chaincod. 
+
 ## Features of the Client SDK!
 The Client SDK is written with Typescript offered by Nest.js which makes it easy to plugin lots of predefined functionalities.
 Like the ones mentioned Below.
 For more details about [Nest.js](https://nestjs.com/)
-the paths of all the certificates__ 
+
+### NetworkConnection profile
+
+update the connection.json file depndes on the envipornment where the chaincode deployed.
 
 
 
