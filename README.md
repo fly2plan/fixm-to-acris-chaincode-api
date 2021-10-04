@@ -47,36 +47,6 @@ curl -X GET "http://localhost:3000/enrollAdmin" -H "accept: */*" -H "Authorizati
 
 ###### Request Format
 
-Note : the method name in the request corresponds to the chaincode Method Name:
-
-- __Register User API:__
-URL: http://localhost:3000/registerUser
-
-    ```javascript
-    {
-        "method": "registerUser", 
-        "Args":{
-            "userName": "00000"
-        }
-    }
-    ```
-
-
-- __Invoke API__
-URL: http://localhost:3000/invoke
-
-    ```javascript
-    {
-        "method": "putData", 
-        "Args":{
-            "id": "0"
-            "value": "ABC"
-        }
-    }
-    ```
-
-    ```
-
 - __Sample Response__
 
     ```javascript
