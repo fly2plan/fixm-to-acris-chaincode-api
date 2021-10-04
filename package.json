@@ -1,8 +1,8 @@
 {
-  "name": "bc-sdk-api",
+  "name": "api-middleware",
   "version": "0.0.1",
   "description": "",
-  "author": "",
+  "author": "Renjith",
   "license": "MIT",
   "scripts": {
     "prebuild": "rimraf dist",
