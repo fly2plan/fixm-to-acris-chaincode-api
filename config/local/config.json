@@ -1,0 +1,18 @@
+{
+   "name": "basic",
+   "version": "1.0",
+   "host": "localhost",
+   "port": "3000",  
+   "access":{
+      "username":"admin",
+      "password":"adminpw"
+   },
+  
+    "swagger":{
+        "title": "FIXM  To ACRIS Flight Data Transformer Chaincode API",
+        "description": "The API endpoints for  the Chaincode",
+        "version": "1.0",
+        "tag": "API endpoints",
+        "url": "api-docs"
+    }
+}

@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+    dev:
+        container_name: api_middleware
+        image: api_middleware:1.0.0
+        build:
+            context: .
+            target: development
+            dockerfile: ./Dockerfile
+        command: npm run start:dev
+        environment:
+            #Generic peer variables
+            - NODE_ENV=DEV
+            - JWT_SECRET=ibssecret
+            - SERVER_PORT=3000
+        ports:
+            - 3000:3000
+
+
+            
+            - 9229:9229
+        networks:
+            - fabric_test
+        volumes:
+            - .:/usr/src/app
+            - /usr/src/app/node_modules
+        restart: unless-stopped
+    prod:
+        container_name: api-middleware_prod
+        image: api-middleware-prod:1.0.0
+        build:
+            context: .
+            target: production
+            dockerfile: ./Dockerfile
+        command: npm run start:prod
+        ports:
+            - 3000:3000
+            - 9229:9229
+        networks:
+            - fabric_test
+        volumes:
+            - .:/usr/src/app
+            - /usr/src/app/node_modules
+        restart: unless-stopped
+
+networks:
+    fabric_test:
+
+
+networks:
+  fabric_test:
+    external: true
