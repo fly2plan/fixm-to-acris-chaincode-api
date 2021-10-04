@@ -14,6 +14,7 @@ services:
             - NODE_ENV=DEV
             - JWT_SECRET=ibssecret
             - SERVER_PORT=3000
+            - DISCOVERY_AS_LOCALHOST=false
         ports:
             - 3000:3000
 
