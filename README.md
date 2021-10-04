@@ -1,4 +1,4 @@
-# api-middleware for fixmtoacristransformer chaincode.
+# The api-middleware for fixmtoacristransformer chaincode.
 
 The middleware to support chaincode operations on the fixmtoacristransformer chaincod. 
 
@@ -28,11 +28,20 @@ The Client requires Node 10.9 - 10.xx version as per the Hyperledger requirement
 
 - Set the node version to 8.x using NVM if needed
 - `npm install`
-- `npm run start` for local
+- `npm run start:dev` for local
 - `npm run build` for prod & run `node dist/src/main.js`
 - Use pm2 process management for production version.
 
-go to http://localhost:3000/api-docs on your browser to access the swagger documentation
+-  Once you have your fabric network up and running, go to the fixm-to-acris-flightdata-chaincode-api directory. 
+
+- From the test-application folder [/test-application/src/config/] inside the fixm-to-acris-flightdata-chaincode directory, copy the connection profile(.json) and Paste it     inside the config folder in the fixm-to-acris-flightdata-chaincode-api directory
+
+- You can run npm run start:dev or Fom inside the fixm-to-acris-flightdata-chaincode-api directory build and run the api container using the command -  docker-compose -f "./docker-compose.yml" up -d dev
+
+- This sets up the api container and adds it to the existing fabric network inside docker. you can interact with it from the swagger UI at http://localhost:3000/api-docs
+
+
+-  Go to http://localhost:3000/api-docs on your browser to access the swagger documentation
 
 - __After running the app, the first step is to run the enrollAdmin API to further use other URLS__
 -  Unlock the APIs in the swagger with Authorise button on the top right corner
