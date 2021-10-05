@@ -63,7 +63,7 @@ export class UserController {
 
     @ApiOperation({
         description: 'Register a new user by giving username and password..',
-        summary: 'Register a new user',
+        summary: 'Register a new user. Eg . { "methode":"register",args : {"userName":"renjith","password":"renjith123","orgtype":"airline","iatacode":"BA"}}',
     })
     @Post('/registerUser')
     @ApiBasicAuth()
@@ -74,7 +74,7 @@ export class UserController {
        if (!apiReq || !apiReq.args || !apiReq.args['userName']) {
             throw new HttpException('userName field missing in the Request', HttpStatus.BAD_REQUEST);
         }
-       await registerUser(apiReq.args['userName'], apiReq.args['orgtype'] , apiReq.args['iatacode']);
+       await registerUser(apiReq.args['userName'], apiReq.args['orgtype'] , apiReq.args['iatacode'], apiReq.args['password']);
        return this.appService.buildAPIResponse(200, 'User Registered Successfullyl!', {}, undefined);
     }
     @ApiOperation({

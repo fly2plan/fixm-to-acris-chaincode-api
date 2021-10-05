@@ -7,9 +7,10 @@ import * as appService from '../app.service';
 const controller = 'User';
 const Logger = new AppLogger();
 
-export async function registerUser(userName:string, orgType:string, iataCode: string) {
+export async function registerUser(userName:string, orgType:string, iataCode: string, password: string) {
 
     Logger.log(`${new Date().toLocaleString()}: [${controller}] Start registering user.`);
+    console.log("=====OrgType====",orgType,iataCode, password)
     try {
         const utilsConfig = UtilsConfig.getInstance();
         const ccp = buildCCPOrg();
@@ -19,7 +20,7 @@ export async function registerUser(userName:string, orgType:string, iataCode: st
         // setup the wallet to hold the credentials of the application user
         const wallet = await buildWallet(ConfigContants.WALLET_PATH);
               
-        await utilsConfig.registerAndEnrollUser(caClient, wallet,ConfigContants.ORG_MSP,userName,ConfigContants.ORG_DPT_AFFILIATION , orgType, iataCode);
+        await utilsConfig.registerAndEnrollUser(caClient, wallet,ConfigContants.ORG_MSP,userName,ConfigContants.ORG_DPT_AFFILIATION , orgType, iataCode,password);
 
         Logger.log(`${new Date().toLocaleString()}: [${controller}] Successfully registered user.`);
     } catch (error) {

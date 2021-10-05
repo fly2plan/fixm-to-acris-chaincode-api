@@ -21,7 +21,7 @@ export async function loginUser(userName:string, password:string) {
         // setup the wallet to hold the credentials of the application user
         const wallet      = await buildWallet(ConfigContants.WALLET_PATH);
           
-        let isValidUser   = await utilsConfig.isUserExits(caClient, wallet,userName);
+        let isValidUser   = await utilsConfig.isUserExits(caClient, wallet,userName, password);
         return isValidUser;
         Logger.log(`${new Date().toLocaleString()}: [${controller}] Successfully finished login check.`);
     } catch (error) {
