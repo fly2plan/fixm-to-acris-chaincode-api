@@ -99,7 +99,6 @@ export class UtilsConfig {
     public async registerAndEnrollUser(caClient: FabricCAServices, wallet: Wallet, orgMspId: string, userId: string, affiliation: string, orgType: string, iataCode: string, password: string): Promise<string> {
         try {
 
-            console.log('============ START registerAndEnrollUser for org============');
             // Check to see if we've already enrolled the user
             const userIdentity = await wallet.get(userId);
             if (userIdentity) {
@@ -138,7 +137,7 @@ export class UtilsConfig {
                 type: 'X.509',
             };
             await wallet.put(userId, x509Identity);
-            console.log('============ END registerAndEnrollUser for org============');
+           
             return `Successfully registered and enrolled user ${userId} and imported it into the wallet`;
         } catch (error) {
 
@@ -187,7 +186,7 @@ export class UtilsConfig {
                    
                     if (arryAttr[i].name === 'password') password = response.result.attrs[keys[i]].value;
                 }
-                console.log("======password====", password)
+               
 
             }
             
