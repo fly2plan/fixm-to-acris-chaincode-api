@@ -170,7 +170,7 @@ export class UtilsConfig {
             
             if (userIdentity) {
                 
-            if(ConfigContants.DISCOVERY_AS_LOCALHOST.toString() === 'false') return false;
+            if(ConfigContants.DISCOVERY_AS_LOCALHOST.toString() === 'false') return true;
             const gateway = new Gateway();
             await gateway.connect(buildCCPOrg(), { wallet, identity: userId.trim(), discovery: { enabled: true, asLocalhost: (ConfigContants.DISCOVERY_AS_LOCALHOST.toString().trim() === 'false' ? false : true) } });// Get the CA client object from the gateway for interacting with the CA.const ca = gateway.getClient().getCertificateAuthority();
             const adminIdentity = await wallet.get("admin");
